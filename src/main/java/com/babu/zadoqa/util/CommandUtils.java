@@ -129,7 +129,7 @@ public class CommandUtils {
 	case "promptBox":
 	    returnObj = Navigate.promptBox(driver, element, inputData);
 	    break;
-	case "SendKeys":
+	case "Type":
 	    Manipulation.sendKeys(element, inputData);
 	    break;
 	case "getText":
@@ -143,6 +143,9 @@ public class CommandUtils {
 	    break;
 	case "waitTime":
 	    Navigate.waitTime(driver, inputData);
+	    break;
+	case "waitUntilElementPresent":
+	    Navigate.waitUntilElementPresent(element);
 	    break;
 	case "Maximize":
 	    Navigate.maximize(driver);

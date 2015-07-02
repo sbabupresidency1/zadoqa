@@ -45,7 +45,7 @@ public class TestNGClass{
 	{
 	    TestParameters params = new TestParameters();
 	    File tcFileName = testCaseItr.next();
-	    params.setBrowserName("firefox");
+	    params.setBrowserName("chrome");
 	    params.setTestCaseFileName(tcFileName);
 	    params.setTestCaseName(FilenameUtils.getBaseName(tcFileName.getName()));
 	    params.setModuleName(tcFileName.getParentFile().getName());

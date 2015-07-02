@@ -7,9 +7,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class Navigate {
 
+	static WebDriver driver;
+	static WebDriverWait wait;
+	
     public static void get(WebDriver driver, String url) {
 	driver.get(url);
     }
@@ -21,6 +27,11 @@ public class Navigate {
     public static void waitTime(WebDriver driver, String waitSeconds) {
 	driver.manage().timeouts().implicitlyWait(Integer.parseInt(waitSeconds), TimeUnit.SECONDS);
     }
+    
+    //Wait Until element present July 2nd
+    public static void waitUntilElementPresent( WebElement element) {
+    	wait.until(ExpectedConditions.presenceOfElementLocated((By) (element)));
+        }
 
     public static void refreshPage(WebDriver driver) {
 	driver.navigate().refresh();
