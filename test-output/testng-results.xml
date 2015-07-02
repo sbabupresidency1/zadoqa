@@ -20,16 +20,16 @@
       <![CDATA[STEP6]]>
     </line>
   </reporter-output>
-  <suite name="Zado QA" duration-ms="51380" started-at="2015-07-02T12:34:40Z" finished-at="2015-07-02T12:35:31Z">
+  <suite name="Zado QA" duration-ms="28097" started-at="2015-07-02T13:03:27Z" finished-at="2015-07-02T13:03:55Z">
     <groups>
     </groups>
-    <test name="Test 1" duration-ms="51380" started-at="2015-07-02T12:34:40Z" finished-at="2015-07-02T12:35:31Z">
+    <test name="Test 1" duration-ms="28097" started-at="2015-07-02T13:03:27Z" finished-at="2015-07-02T13:03:55Z">
       <class name="TestNGClass">
-        <test-method status="PASS" signature="testCaseProvider()[pri:0, instance:TestNGClass@769c9116]" name="testCaseProvider" is-config="true" duration-ms="1057" started-at="2015-07-02T18:04:40Z" finished-at="2015-07-02T18:04:41Z">
+        <test-method status="PASS" signature="testCaseProvider()[pri:0, instance:TestNGClass@769c9116]" name="testCaseProvider" is-config="true" duration-ms="647" started-at="2015-07-02T18:33:27Z" finished-at="2015-07-02T18:33:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCaseProvider -->
-        <test-method status="FAIL" signature="launchapp(com.babu.zadoqa.utils.TestParameters)[pri:0, instance:TestNGClass@769c9116]" name="launchapp" duration-ms="50276" started-at="2015-07-02T18:04:41Z" data-provider="data" finished-at="2015-07-02T18:05:31Z">
+        <test-method status="FAIL" signature="launchapp(com.babu.zadoqa.utils.TestParameters)[pri:0, instance:TestNGClass@769c9116]" name="launchapp" duration-ms="27406" started-at="2015-07-02T18:33:28Z" data-provider="data" finished-at="2015-07-02T18:33:55Z">
           <params>
             <param index="0">
               <value>

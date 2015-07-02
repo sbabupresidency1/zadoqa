@@ -30,7 +30,7 @@ public class Navigate {
     
     //Wait Until element present July 2nd
     public static void waitUntilElementPresent( WebElement element) {
-    	wait.until(ExpectedConditions.presenceOfElementLocated((By) (element)));
+    	wait.until(ExpectedConditions.presenceOfElementLocated((By) element));
         }
 
     public static void refreshPage(WebDriver driver) {
