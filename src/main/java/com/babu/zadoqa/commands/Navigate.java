@@ -3,6 +3,7 @@ package com.babu.zadoqa.commands;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -74,6 +75,17 @@ public class Navigate {
 				+ e.getStackTrace());
 	} 
     }
+    
+    public static void switchToFrameXpath(WebDriver driver,String frameXpath) {
+        try {
+         driver.switchTo().frame(driver.findElement(By.xpath(frameXpath)));
+         //driver.switchTo().frame((WebElement) By.xpath(frameXpath));
+        } catch (NoSuchFrameException e) {
+         System.out.println("Unable to locate frame with Name " + frameXpath
+           + e.getStackTrace());
+        } 
+        
+           }
     
     public static void switchToFrame(WebDriver driver,int frameIndex) {
 	try {

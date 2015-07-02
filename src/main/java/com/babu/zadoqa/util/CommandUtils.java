@@ -104,6 +104,9 @@ public class CommandUtils {
 	case "switchFrameByName":
 	    Navigate.switchToFrame(driver, inputData);
 	    break;
+	case "switchFrameByXpath":
+	Navigate.switchToFrameXpath(driver, inputData);
+    break;
 	case "switchFrameByIndex":
 	    int index = new Integer(inputData);
 	    Navigate.switchToFrame(driver, index);
