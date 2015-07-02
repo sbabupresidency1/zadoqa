@@ -1,0 +1,1 @@
+java -jar -Dzado.reporter.config=C:/Softwares/Babu/testcase/zado.properties -DlogfileLoc=C:/ABE zadoqa-jar-with-dependencies.jar

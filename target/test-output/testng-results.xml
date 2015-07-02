@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[STEP1]]>
+    </line>
+    <line>
+      <![CDATA[STEP2]]>
+    </line>
+    <line>
+      <![CDATA[STEP3]]>
+    </line>
+    <line>
+      <![CDATA[STEP4]]>
+    </line>
+  </reporter-output>
+  <suite name="Sample Suite Name" duration-ms="12174" started-at="2015-04-14T04:39:14Z" finished-at="2015-04-14T04:39:27Z">
+    <groups>
+    </groups>
+    <test name="Test 1" duration-ms="12174" started-at="2015-04-14T04:39:14Z" finished-at="2015-04-14T04:39:27Z">
+      <class name="TestNGClass">
+        <test-method status="PASS" signature="testCaseProvider()[pri:0, instance:TestNGClass@47d6d441]" name="testCaseProvider" is-config="true" duration-ms="428" started-at="2015-04-13T21:39:14Z" finished-at="2015-04-13T21:39:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseProvider -->
+        <test-method status="PASS" signature="launchapp(com.babu.zadoqa.utils.TestParameters)[pri:0, instance:TestNGClass@47d6d441]" name="launchapp" duration-ms="11716" started-at="2015-04-13T21:39:15Z" data-provider="data" finished-at="2015-04-13T21:39:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC_001]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[STEP1]]>
+            </line>
+            <line>
+              <![CDATA[STEP2]]>
+            </line>
+            <line>
+              <![CDATA[STEP3]]>
+            </line>
+            <line>
+              <![CDATA[STEP4]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchapp -->
+      </class> <!-- TestNGClass -->
+    </test> <!-- Test 1 -->
+  </suite> <!-- Sample Suite Name -->
+</testng-results>
