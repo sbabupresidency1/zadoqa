@@ -6,7 +6,7 @@
       <class name="TestNGClass">
         <methods>
           <include name="testCaseProvider"/>
-          <include name="launchapp" invocation-numbers="0"/>
+          <include name="launchapp" invocation-numbers="2 3 4"/>
         </methods>
       </class> <!-- TestNGClass -->
     </classes>

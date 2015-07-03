@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 
 import com.babu.zadoqa.ZadoReports;
 import com.babu.zadoqa.enums.LogAs;
+import com.babu.zadoqa.reports.CaptureScreen;
+import com.babu.zadoqa.reports.CaptureScreen.ScreenshotOf;
 import com.babu.zadoqa.util.CommandUtils;
 
 public class TestCaseRunner {
@@ -39,7 +41,9 @@ public class TestCaseRunner {
 	    Object returnObj = util.executeAction(driver, element, eachStep.getAction(),
 		    eachStep.getInputData());
 	    
-	    ZadoReports.add(eachStep.getDescription(),eachStep.getInputData(), eachStep.getExpectedResult(),Objects.toString(returnObj, ""),LogAs.PASSED, null);
+	    //ZadoReports.add(eachStep.getDescription(),eachStep.getInputData(), eachStep.getExpectedResult(),Objects.toString(returnObj, ""),LogAs.PASSED, null);
+	    ZadoReports.add(eachStep.getDescription(),eachStep.getInputData(), eachStep.getExpectedResult(),Objects.toString(returnObj, ""),LogAs.PASSED, new CaptureScreen(
+                ScreenshotOf.BROWSER_PAGE));
 	}
     }
 
