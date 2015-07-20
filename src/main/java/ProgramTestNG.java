@@ -9,6 +9,8 @@ import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 
+import com.babu.zadoqa.util.MailingReport;
+
 public class ProgramTestNG {
 
     private void testRunner(Map<String, String> testngParams) {
@@ -47,6 +49,8 @@ public class ProgramTestNG {
         Map<String,String> params = new HashMap<String,String>();
         params.put("browser", "chrome");
         program.testRunner(params);
+        
+        MailingReport.SendMail();
     }
 
 }
