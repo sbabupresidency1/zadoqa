@@ -45,7 +45,7 @@ public class TestNGClass{
 	{
 	    TestParameters params = new TestParameters();
 	    File tcFileName = testCaseItr.next();
-	    params.setBrowserName("chrome");
+	    params.setBrowserName("firefox");
 	    params.setTestCaseFileName(tcFileName);
 	    params.setTestCaseName(FilenameUtils.getBaseName(tcFileName.getName()));
 	    params.setModuleName(tcFileName.getParentFile().getName());
@@ -72,7 +72,7 @@ public class TestNGClass{
 		
 		try {
 		    List<CaseStep> steps = utils.readTestCase(params.getTestCaseFileName(), params.getOrSheetFileName());
-		    TestCaseRunner.executeTestCase(driver, steps);
+		    TestCaseRunner.exectuteTestCase(driver, steps);
 		} catch (NoSuchElementException e) {
 		    ZadoReports.add("Failed to find Element", LogAs.FAILED, new CaptureScreen(
 	                    ScreenshotOf.BROWSER_PAGE));

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Zado QA]">
+  <parameter name="browser" value="chrome"/>
   <test name="Test 1(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="TestNGClass">
         <methods>
           <include name="testCaseProvider"/>
-          <include name="launchapp" invocation-numbers="2 3 4"/>
+          <include name="launchapp" invocation-numbers="0"/>
         </methods>
       </class> <!-- TestNGClass -->
     </classes>
