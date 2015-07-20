@@ -43,8 +43,8 @@ public class TestCaseRunner {
 		    eachStep.getInputData());
 	    
 	    
-	    ZadoReports.add(eachStep.getDescription(),eachStep.getInputData(), eachStep.getExpectedResult(),Objects.toString(returnObj, ""),LogAs.PASSED, new CaptureScreen(
-                    ScreenshotOf.BROWSER_PAGE));
+	    //ZadoReports.add(eachStep.getDescription(),eachStep.getInputData(), eachStep.getExpectedResult(),Objects.toString(returnObj, ""),LogAs.PASSED, new CaptureScreen(                    ScreenshotOf.BROWSER_PAGE));
+	    ZadoReports.add(eachStep.getDescription(),eachStep.getInputData(), eachStep.getExpectedResult(),Objects.toString(returnObj, ""),LogAs.PASSED, null);
 	}
     }
 
