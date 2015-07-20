@@ -45,7 +45,7 @@ public class ProgramTestNG {
 
         ProgramTestNG program = new ProgramTestNG();
         Map<String,String> params = new HashMap<String,String>();
-        //params.put("browser", "chrome");
+        params.put("browser", "chrome");
         program.testRunner(params);
     }
 
