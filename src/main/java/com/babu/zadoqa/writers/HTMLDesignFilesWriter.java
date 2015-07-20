@@ -37,7 +37,7 @@ public class HTMLDesignFilesWriter
     copyImage("images/fail.png", Directory.IMGDir);
     copyImage("images/pass.png", Directory.IMGDir);
     copyImage("images/skip.png", Directory.IMGDir);
-    copyImage("images/atu.jpg", Directory.IMGDir);
+    copyImage("images/zado.jpg", Directory.IMGDir);
     copyImage("images/loginfo.png", Directory.IMGDir);
     copyImage("images/logpass.png", Directory.IMGDir);
     copyImage("images/logfail.png", Directory.IMGDir);

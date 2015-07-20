@@ -108,6 +108,10 @@ public class CommandUtils {
 	    int index = new Integer(inputData);
 	    Navigate.switchToFrame(driver, index);
 	    break;
+///////FTPS///Frame by Xpath///Gobi.E//////////// 
+	case "switchFrameByXpath":
+		Navigate.switchToFrame(driver, element);
+		break;
 	case "switchToDefaultFrame":
 	    Navigate.switchtoDefaultFrame(driver);
 	    break;
@@ -152,6 +156,42 @@ public class CommandUtils {
 	    break;
 	default:
 	    break;
+///////FTPS///Window Handling///Gobi.E////////////    
+	case "getWindowHandle":
+		Manipulation.getWindow(driver, element);
+		break;
+///////FTPS///Auto It///Gobi.E////////////    
+	case "getAutoIt":
+		Manipulation.getAutoit(driver, inputData);
+		break;
+///////FTPS///Page Down///Gobi.E////////////  
+	case "Pagedown":
+		Navigate.pagedown(driver);
+		break;
+///////FTPS///Page End//Gobi.E////////////   
+	case "PageEnd":
+		Navigate.Pageend(driver);
+		break;	 
+///////FTPS///Page Maximize//Gobi.E////////////   
+	case "PageMaximize":
+		Navigate.Pagemaximize(driver);
+		break;		
+///////FTPS///Drag And Drop//Gobi.E////////////   
+	case "Drag":
+		Manipulation.dragElement(driver, element);
+		break;
+	case "Drop":
+		Manipulation.dropElement(driver, element);
+		break;
+///////FTPS///Wait//Gobi.E////////////   
+	case "wait":
+		Manipulation.wait(driver, inputData);
+		break;
+///////FTPS///Wait//Gobi.E////////////   
+	case "verifyElementPresent":
+		Manipulation.elementPresent(driver, element);
+		break;
+		
 
 	}
 

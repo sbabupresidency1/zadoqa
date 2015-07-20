@@ -3,9 +3,13 @@ package com.babu.zadoqa.commands;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class Navigate {
 
@@ -84,7 +88,39 @@ public class Navigate {
 	} 
     }
     
-    public static void switchtoDefaultFrame(WebDriver driver) {
-	driver.switchTo().defaultContent();
+    public static void switchtoDefaultFrame(WebDriver driver) 
+    {
+    	driver.switchTo().defaultContent();
     }
+    
+///////FTPS///Frame by Xpath///Gobi.E//////////// 
+    public static void switchToFrame(WebDriver driver,WebElement element) {
+    	try {
+    		driver.switchTo().frame(element);
+    	} catch (NoSuchFrameException e) {
+    		System.out.println("Unable to locate frame with Xpath " + element
+    				+ e.getStackTrace());
+    	} 
+    }
+    
+///////FTPS///Page Down///Gobi.E//////////// 
+    public static void pagedown(WebDriver driver) 
+    {
+    	JavascriptExecutor jse = (JavascriptExecutor)driver;
+    	jse.executeScript("window.scrollBy(0,250)", "");
+    }
+
+///////FTPS///Page End///Gobi.E//////////// 
+    public static void Pageend(WebDriver driver) 
+    {
+    	Actions actionObject = new Actions(driver);
+    	actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+    }
+
+///////FTPS///Page Maximize///Gobi.E//////////// 
+    public static void Pagemaximize(WebDriver driver) 
+    {
+    	driver.findElement(By.tagName("body")).sendKeys(Keys.F11);
+    }
+
 }

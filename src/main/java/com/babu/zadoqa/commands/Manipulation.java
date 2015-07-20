@@ -1,11 +1,15 @@
 package com.babu.zadoqa.commands;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -111,7 +115,7 @@ public class Manipulation {
 		    + e.getStackTrace());
 	}
     }
-
+    
     public static void selectCheckBox(WebElement element) {
 	try {
 	    if (element.isSelected()) {
@@ -148,31 +152,95 @@ public class Manipulation {
     }
 
     public static void selectByValue(WebElement element, String inputData) {
-	try {
-	    Select selectBox = new Select(element);
-	    selectBox.selectByValue(inputData);
-	} catch (Exception e) {
-	    log.info("Unable to select selectbox: " + element);
-	}
+    	try {
+    		Select selectBox = new Select(element);
+    		selectBox.selectByValue(inputData);
+    	} catch (Exception e) {
+    		log.info("Unable to select selectbox: " + element);
+    	}
     }
 
     public static void deselectByIndex(WebElement element, String inputData) {
-	try {
-	    Integer index = new Integer(inputData);
-	    Select selectBox = new Select(element);
-	    selectBox.deselectByIndex(index);
-	} catch (Exception e) {
-	    log.info("Unable to select selectbox: " + element);
-	}
+    	try {
+    		Integer index = new Integer(inputData);
+    		Select selectBox = new Select(element);
+    		selectBox.deselectByIndex(index);
+    	} catch (Exception e) {
+    		log.info("Unable to select selectbox: " + element);
+    	}
     }
 
     public static void deselectByValue(WebElement element, String inputData) {
-	try {
-	    Select selectBox = new Select(element);
-	    selectBox.deselectByValue(inputData);
-	} catch (Exception e) {
-	    log.info("Unable to select selectbox: " + element);
-	}
+    	try {
+    		Select selectBox = new Select(element);
+    		selectBox.deselectByValue(inputData);
+    	} catch (Exception e) {
+    		log.info("Unable to select selectbox: " + element);
+    	}
     }
+
+///////FTPS///Window Handling///Gobi.E//////////// 
+    public static void getWindow(WebDriver driver, WebElement webElement) 
+    {  
+    	String one = driver.getWindowHandle();
+    	try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}
+    	click(webElement);
+    	try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}
+    	ArrayList<String> st=new ArrayList<String>(driver.getWindowHandles());
+    	st.remove(one);
+    	driver.switchTo().window(st.get(0));
+    }
+    
+///////FTPS///Auto It///Gobi.E//////////// 
+    public static void getAutoit(WebDriver driver, String inputData) 
+    {  
+    	try 
+    	{
+    		// String one = webElement.toString();
+    		Runtime.getRuntime().exec(inputData);		 
+    	} 
+    	catch (IOException e1)
+    	{
+    		e1.printStackTrace();
+    	}
+    }
+    
+///////FTPS///Wait///Gobi.E//////////// 
+    public static void wait(WebDriver driver,String inputData) 
+    {
+    	try {
+    		int time = Integer.parseInt(inputData);
+    		int seconds = time*1000;
+    		Thread.sleep(seconds);
+    	} catch (InterruptedException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    }
+    
+///////FTPS///Drag And Drop///Gobi.E////////////
+    public static WebElement fromElement;
+    public static void dragElement(WebDriver driver, WebElement webElement) 
+    {
+    	fromElement=webElement;
+    }
+
+    public static void dropElement(WebDriver driver, WebElement webElement) 
+    {
+    	Actions action = new Actions(driver);
+    	Action dragDrop = action.dragAndDrop(fromElement, webElement).build();
+    	dragDrop.perform(); 
+    }
+    
+//////////FTPS///Verify Element Present///Gobi.E////////
+    public static void elementPresent(WebDriver driver, WebElement webElement)
+    {
+    	if(webElement!= null){
+    		System.out.println("Element is Present");
+    	}else{
+    		System.out.println("Element is Absent");
+    	}
+    }
+
 
 }

@@ -56,7 +56,17 @@ public class Directory {
     public static boolean recordSuiteExecution = false;
     public static boolean recordTestMethodExecution = false;
     public static final String MAIN_RECORD_FILE_NAME = "ATU_CompleteSuiteRecording";
-
+    public static String userName=null;
+    public static String password=null;
+    public static String smtpHost=null;
+    public static String fromAddress=null;
+    public static String toAddress=null;
+    public static String ccAddress=null;
+   // public static String bccAddress=null;
+    public static String testCasePath=null;
+    public static String ORSheetPath=null;
+    public static String browser=null;
+    
     public static void init() throws ZadoReporterException {
 	if (getCustomProperties() != null) {
 	    log.info("Reading from  custom properties");
@@ -81,6 +91,25 @@ public class Directory {
 			"zado.reports.continueExecutionAfterStepFailed").trim();
 		String recordExecution = localProperties.getProperty(
 			"zado.reports.recordExecution").trim();
+		userName = localProperties.getProperty(
+			"zado.mail.username").trim();
+		password = localProperties.getProperty(
+			"zado.mail.password").trim();
+		smtpHost = localProperties.getProperty(
+			"zado.mail.smtp.host").trim();
+		fromAddress = localProperties.getProperty(
+			"zado.mail.from.address").trim();
+		toAddress = localProperties.getProperty(
+			"zado.mail.to.address").trim();
+		ccAddress = localProperties.getProperty(
+				"zado.mail.cc.address").trim();			
+		testCasePath = localProperties.getProperty(
+			"zado.proj.testcasePath").trim();
+		ORSheetPath = localProperties.getProperty(
+			"zado.proj.ORSheet.path").trim();
+		browser = localProperties.getProperty(
+			"zado.browser.name").trim().toLowerCase();
+		
 		try {
 		    if ((headerText != null) && (headerText.length() > 0)) {
 			ReportLabels.HEADER_TEXT.setLabel(headerText);
@@ -226,7 +255,7 @@ public class Directory {
 	}
     }
 
-    private static String getCustomProperties() {
+    public static String getCustomProperties() {
 	return System.getProperty("zado.reporter.config");
     }
 
