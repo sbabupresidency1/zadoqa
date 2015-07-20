@@ -26,8 +26,6 @@ import com.babu.zadoqa.listeners.ZadoReportsListener;
 import com.babu.zadoqa.reports.CaptureScreen;
 import com.babu.zadoqa.reports.CaptureScreen.ScreenshotOf;
 import com.babu.zadoqa.util.ExcelUtils;
-import com.babu.zadoqa.util.MailingReport;
-import com.babu.zadoqa.utils.Directory;
 import com.babu.zadoqa.utils.TestParameters;
 
 @Listeners({ ConfigurationListener.class, ZadoReportsListener.class, 
@@ -40,18 +38,18 @@ public class TestNGClass{
     public static Iterator<Object[]> testCaseProvider() {
 	List<Object[]> data = new ArrayList<Object[]>();
 	ExcelUtils utils = new ExcelUtils();
-	Collection<File> testCaseList = utils.readTestCaseFiles(Directory.testCasePath);
+	Collection<File> testCaseList = utils.readTestCaseFiles("C:\\Softwares\\Babu\\testcase");
 	Iterator<File> testCaseItr = testCaseList.iterator();
 	
 	while(testCaseItr.hasNext())
 	{
 	    TestParameters params = new TestParameters();
 	    File tcFileName = testCaseItr.next();
-	    params.setBrowserName(Directory.browser);
+	    params.setBrowserName("firefox");
 	    params.setTestCaseFileName(tcFileName);
 	    params.setTestCaseName(FilenameUtils.getBaseName(tcFileName.getName()));
 	    params.setModuleName(tcFileName.getParentFile().getName());
-	    params.setOrSheetFileName(new File(Directory.ORSheetPath));
+	    params.setOrSheetFileName(new File("C:\\Softwares\\Babu\\testcase\\ORSheet.xlsx"));
 	    data.add(new Object[]{params});
 	}
 	
@@ -93,5 +91,6 @@ public class TestNGClass{
 	    // TODO Auto-generated catch block
 	    e.printStackTrace();
 	}
-    }    
+    }
+    
 }
