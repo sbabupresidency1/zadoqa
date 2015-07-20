@@ -104,6 +104,9 @@ public class CommandUtils {
 	case "switchFrameByName":
 	    Navigate.switchToFrame(driver, inputData);
 	    break;
+	case "switchFrameByXpath":
+	Navigate.switchToFrameXpath(driver, inputData);
+    break;
 	case "switchFrameByIndex":
 	    int index = new Integer(inputData);
 	    Navigate.switchToFrame(driver, index);
@@ -126,7 +129,7 @@ public class CommandUtils {
 	case "promptBox":
 	    returnObj = Navigate.promptBox(driver, element, inputData);
 	    break;
-	case "SendKeys":
+	case "Type":
 	    Manipulation.sendKeys(element, inputData);
 	    break;
 	case "getText":
@@ -140,6 +143,9 @@ public class CommandUtils {
 	    break;
 	case "waitTime":
 	    Navigate.waitTime(driver, inputData);
+	    break;
+	case "waitUntilElementPresent":
+	    Navigate.waitUntilElementPresent(element);
 	    break;
 	case "Maximize":
 	    Navigate.maximize(driver);
