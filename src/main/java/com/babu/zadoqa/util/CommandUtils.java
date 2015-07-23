@@ -165,17 +165,45 @@ public class CommandUtils {
 		Manipulation.getAutoit(driver, inputData);
 		break;
 ///////FTPS///Page Down///Gobi.E////////////  
-	case "Pagedown":
+	case "pageDown":
 		Navigate.pagedown(driver);
 		break;
-///////FTPS///Page End//Gobi.E////////////   
-	case "PageEnd":
-		Navigate.Pageend(driver);
-		break;	 
-///////FTPS///Page Maximize//Gobi.E////////////   
-	case "PageMaximize":
-		Navigate.Pagemaximize(driver);
+///////FTPS///Keyboard Page Up///Gobi.E////////////
+	case "KeyboardPageUp":
+		Navigate.keyboardPageUp(driver);
+		break;
+///////FTPS///Keyboard Page Down///Gobi.E////////////
+	case "KeyboardPageDown":
+		Navigate.keyboardPageDown(driver);
+		break;
+///////FTPS///Keyboard Page End//Gobi.E////////////   
+	case "KeyboardEnd":
+		Navigate.keyboardEnd(driver);
+		break;	
+///////FTPS///Keyboard Tab Button//Gobi.E////////////   		
+	case "KeyboardTab":
+		Navigate.keyboardTab(driver);
 		break;		
+///////FTPS///Keyboard F11//Gobi.E////////////   
+	case "pageMaximize":
+		Navigate.Pagemaximize(driver);
+		break;	
+///////FTPS///Keyboard Arrow Up///Gobi.E////////////		
+	case "KeyboardArrowUp":
+		Navigate.keyboardArrowUp(driver);
+		break;	
+///////FTPS///Keyboard Arrow Down///Gobi.E////////////		
+	case "KeyboardArrowDown":
+		Navigate.keyboardArrowDown(driver);
+		break;	
+///////FTPS///Keyboard Arrow Left///Gobi.E////////////
+	case "KeyboardArrowLeft":
+		Navigate.keyboardArrowLeft(driver);
+		break;	
+///////FTPS///Keyboard Arrow Right///Gobi.E////////////		
+	case "KeyboardArrowRight":
+		Navigate.keyboardArrowRight(driver);
+		break;			
 ///////FTPS///Drag And Drop//Gobi.E////////////   
 	case "Drag":
 		Manipulation.dragElement(driver, element);
@@ -187,12 +215,59 @@ public class CommandUtils {
 	case "wait":
 		Manipulation.wait(driver, inputData);
 		break;
-///////FTPS///Wait//Gobi.E////////////   
-	case "verifyElementPresent":
-		Manipulation.elementPresent(driver, element);
+///////FTPS///verify Element present//Gobi.E////////////   
+	case "verifyElementisPresent":
+		Manipulation.elementisPresent(driver, element);
 		break;
+///////FTPS///verify Element is Visible//Gobi.E////////////  		
+	case "verifyElementisVisible":
+		Manipulation.elementisVisible(driver, element);
+		break;
+///////FTPS///verify Element is Enable//Gobi.E////////////  
+	case "verifyElementisEnable":
+		Manipulation.elementisEnable(driver, element);
+		break;
+///////FTPS///verify Text is present//Gobi.E////////////  
+	case "verifyTextisPresent":
+		Manipulation.testIsPresent(driver, inputData);
+		break;			
+///////FTPS///Wait for element//Gobi.E////////////   
+	case "waitForElementPresent":
+		Manipulation.waitForElement(driver, element);
+		break;
+///////FTPS///Wait for visibility element//Gobi.E//////////// 		
+	case "visibilityOfElement":
+		Manipulation.VisibilityElement(driver, element);
+		break;
+///////FTPS///delete All Cookies//Gobi.E////////////   
+	case "deleteAllCookies":
+		Navigate.deleteallCookies(driver);
+		break;	
+///////FTPS///Navigate to URL//Gobi.E///////////   
+	case "navigateToURL":
+		Navigate.navigateUrl(driver,inputData);
+		break;	
+///////FTPS///Taking Screen Shots//Gobi.E///////////   
+	case "takeScreeShot":
+		Navigate.screenShot(driver,inputData);
+		break;	
+///////FTPS///Alert Generation//Gobi.E///////////   
+	case "generateAlert":
+		Navigate.alertGenerate(driver,inputData);
+		break;	
 		
-
+		
+///////FTPS// Size //Gobi.E///////////   
+		case "getSize":
+			returnObj = ElementActions.getText(element);
+			break;		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	return returnObj;

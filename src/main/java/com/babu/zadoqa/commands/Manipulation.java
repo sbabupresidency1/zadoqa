@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -11,7 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Manipulation {
 
@@ -232,8 +235,8 @@ public class Manipulation {
     	dragDrop.perform(); 
     }
     
-//////////FTPS///Verify Element Present///Gobi.E////////
-    public static void elementPresent(WebDriver driver, WebElement webElement)
+//////////FTPS///Verify Element is Present///Gobi.E////////
+    public static void elementisPresent(WebDriver driver, WebElement webElement)
     {
     	if(webElement!= null){
     		System.out.println("Element is Present");
@@ -241,6 +244,63 @@ public class Manipulation {
     		System.out.println("Element is Absent");
     	}
     }
+//////////FTPS///Verify Element is Visible///Gobi.E////////    
+    public static void elementisVisible(WebDriver driver, WebElement webElement)
+    {
+    	if(webElement.isDisplayed())
+    	{
+    		System.out.println("Element is Visible");
+    	}
+    	else
+    	{
+    		System.out.println("Element is InVisible");
+    	}
+    }
+//////////FTPS///Verify Element is Enable///Gobi.E//////// 
+    public static void elementisEnable(WebDriver driver, WebElement webElement)
+    {
+    	if(webElement.isEnabled())
+    	{
+    		System.out.println("Element is Enable");
+    	}
+    	else
+    	{
+    		System.out.println("Element is Disabled");
+    	}
+    }
+//////////FTPS///Verify Text is Present///Gobi.E////////
+    public static void testIsPresent(WebDriver driver, String inputData)
+    {
+    	if(driver.getPageSource().contains(inputData))
+    	{
+    		System.out.println("Text is present");
+    	}
+    	else
+    	{
+    		System.out.println("Text is absent");
+    	}
+    }
+    
+    
+//////////FTPS///wait for  Element Present///Gobi.E////////
+    public static void waitForElement(WebDriver driver, WebElement webElement)
+    {
+    	WebDriverWait wait = new WebDriverWait(driver, 15);
+    	//wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//div[@id='timeLeft']"), "Time left: 7 seconds"));
+    	wait.until(ExpectedConditions.textToBePresentInElement(webElement, "Time left: 7 seconds"));
+    	wait.until(ExpectedConditions.visibilityOf(webElement));
+    	 
+    }
+//////////FTPS///wait for visibility Element///Gobi.E////////    
+    public static void VisibilityElement(WebDriver driver, WebElement webElement)
+    {
+    	WebDriverWait wait = new WebDriverWait(driver, 15);
+    	wait.until(ExpectedConditions.visibilityOf(webElement));
+    	
+    }
 
+    	 
+
+   
 
 }

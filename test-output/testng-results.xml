@@ -67,21 +67,36 @@
     <line>
       <![CDATA[STEP22]]>
     </line>
+    <line>
+      <![CDATA[STEP23]]>
+    </line>
+    <line>
+      <![CDATA[STEP24]]>
+    </line>
+    <line>
+      <![CDATA[STEP25]]>
+    </line>
+    <line>
+      <![CDATA[STEP26]]>
+    </line>
+    <line>
+      <![CDATA[STEP27]]>
+    </line>
   </reporter-output>
-  <suite name="Zado QA" duration-ms="114519" started-at="2015-07-20T11:46:15Z" finished-at="2015-07-20T11:48:10Z">
+  <suite name="Zado QA" duration-ms="130473" started-at="2015-07-21T13:33:06Z" finished-at="2015-07-21T13:35:16Z">
     <groups>
     </groups>
-    <test name="Test 1" duration-ms="114519" started-at="2015-07-20T11:46:15Z" finished-at="2015-07-20T11:48:10Z">
+    <test name="Test 1" duration-ms="130473" started-at="2015-07-21T13:33:06Z" finished-at="2015-07-21T13:35:16Z">
       <class name="TestNGClass">
-        <test-method status="PASS" signature="testCaseProvider()[pri:0, instance:TestNGClass@179caec]" name="testCaseProvider" is-config="true" duration-ms="1378" started-at="2015-07-20T17:16:15Z" finished-at="2015-07-20T17:16:17Z">
+        <test-method status="PASS" signature="testCaseProvider()[pri:0, instance:TestNGClass@179caec]" name="testCaseProvider" is-config="true" duration-ms="1353" started-at="2015-07-21T19:03:06Z" finished-at="2015-07-21T19:03:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCaseProvider -->
-        <test-method status="PASS" signature="launchapp(com.babu.zadoqa.utils.TestParameters)[pri:0, instance:TestNGClass@179caec]" name="launchapp" duration-ms="113070" started-at="2015-07-20T17:16:17Z" data-provider="data" finished-at="2015-07-20T17:18:10Z">
+        <test-method status="PASS" signature="launchapp(com.babu.zadoqa.utils.TestParameters)[pri:0, instance:TestNGClass@179caec]" name="launchapp" duration-ms="129060" started-at="2015-07-21T19:03:07Z" data-provider="data" finished-at="2015-07-21T19:05:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TC_008]]>
+                <![CDATA[TC_009]]>
               </value>
             </param>
           </params>
@@ -151,6 +166,21 @@
             </line>
             <line>
               <![CDATA[STEP22]]>
+            </line>
+            <line>
+              <![CDATA[STEP23]]>
+            </line>
+            <line>
+              <![CDATA[STEP24]]>
+            </line>
+            <line>
+              <![CDATA[STEP25]]>
+            </line>
+            <line>
+              <![CDATA[STEP26]]>
+            </line>
+            <line>
+              <![CDATA[STEP27]]>
             </line>
           </reporter-output>
         </test-method> <!-- launchapp -->
